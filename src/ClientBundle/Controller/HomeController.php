@@ -4,10 +4,10 @@ namespace ClientBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class HomeController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@Client/Default/index.html.twig');
+        return $this->render('@Client/Pages/Home/index.html.twig');
     }
 }
