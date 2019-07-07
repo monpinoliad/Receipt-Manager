@@ -1,0 +1,68 @@
+{% extends '@Client/Base/index.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        {% include '@Client/Components/Sidepanel/index.html.twig' %}
+        <section class="wrapper__content">
+            <div class="container">
+                <h1 class="container__title">
+                    Insert Receipt
+                </h1>
+
+                {% if app.flashes('error') is defined %}
+                    {% include '@Client/Components/Messages/error.html.twig' %}
+                {% endif %}
+                {% if app.flashes('info') is defined %}
+                    {% include '@Client/Components/Messages/info.html.twig' %}
+                {% endif %}
+                {% if app.flashes('success') is defined %}
+                    {% include '@Client/Components/Messages/success.html.twig' %}
+                {% endif %}
+
+                {{ form_start(formCreate, {'action': path('client_receipt_add'), 'method': 'POST', 'attr':{'novalidate':'novalidate'}}) }}
+                    <label>
+                        <div class="input-group">
+                            {{ form_widget(formCreate.receipt_number, { 'attr': {'class': 'input-group__input', 'required': 'true'} }) }}
+                            <div class="input-group-title">
+                                Official Receipt Number
+                            </div>
+                        </div>
+                    </label>
+                    <label>
+                        <div class="input-group">
+                            {{ form_widget(formCreate.amount, { 'attr': {'class': 'input-group__input', 'required': 'true'} }) }}
+                            <div class="input-group-title">
+                                Total Amount
+                            </div>
+                        </div>
+                    </label>
+                    <label>
+                        <div class="input-group">
+                            {{ form_widget(formCreate.shop, { 'attr': {'class': 'input-group__input', 'required': 'true'} }) }}
+                            <div class="input-group-title">
+                                Shop
+                            </div>
+                        </div>
+                    </label>
+                    <label>
+                        <div class="input-group">
+                            {{ form_widget(formCreate.date_issued, { 'attr': {'class': 'input-group__no-input', 'required': 'true'} }) }}
+                            <div class="input-group-title-static">
+                                Date of Purchase
+                            </div>
+                        </div>
+                    </label>
+                    <label>
+                        <div class="input-group">
+                            {{ form_widget(formCreate.input_by, { 'attr': {'class': 'input-group__input', 'required': 'true'} }) }}
+                            <div class="input-group-title">
+                                Input by
+                            </div>
+                        </div>
+                    </label>
+                    {{ form_widget(formCreate.add, { 'attr': {'class': 'btn'}, 'label': 'Insert Receipt' }) }}
+                {{ form_end(formCreate) }}
+            </div>
+        </section>
+    </div>
+{% endblock %}

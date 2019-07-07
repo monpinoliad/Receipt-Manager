@@ -3,3 +3,32 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+@mixin transition($duration) {
+  -webkit-transition: $duration;
+  -moz-transition: $duration;
+  -ms-transition: $duration;
+  -o-transition: $duration;
+  transition: $duration;
+}
+
+@mixin border-radius($size) {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  border-radius: $size;
+}
+
+@mixin rotate($degree) {
+  -webkit-transform: rotate($degree);
+  -moz-transform: rotate($degree);
+  -ms-transform: rotate($degree);
+  -o-transform: rotate($degree);
+  transform: rotate($degree);
+}
+
+@mixin user-select($selection) {
+  -webkit-user-select: $selection;
+  -moz-user-select: $selection;
+  -ms-user-select: $selection;
+  user-select: $selection;
+}

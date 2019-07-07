@@ -1,0 +1,47 @@
+.login-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__sidepanel {
+    position: relative;
+    background-color: $white;
+    height: 100vh;
+    padding: 40pt;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 300pt;
+    z-index: 999;
+
+    &--title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding: 0;
+      margin: 5pt 0;
+    }
+
+    &--description {
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0;
+      margin: 5pt 0 15pt 0;
+    }
+    
+    &--copyright {
+      position: absolute;
+      width: calc(100% - 80pt);
+      text-align: center;
+      bottom: 10pt;
+    }
+
+    & > form {
+      margin: 25pt 0;
+    }
+  }
+
+  &__content {
+    background-color: $mine-shaft;
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
+  }
+}

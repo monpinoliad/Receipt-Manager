@@ -1,2 +1,16 @@
 $white: rgba(255, 255, 255, 1);
+$alto: rgba(224, 224, 224, 1);
+$persian-red: rgba(213, 42, 42, 1);
+$mariner: rgba(51, 110, 209, 1);
+$azure: rgba(47, 94, 172, 1);
+$bay-of-many: rgba(33, 63, 115, 1);
+$eucalyptus: rgba(40,167,69,1);
 $mine-shaft: rgba(54, 54, 54, 1);
+
+$primary: $mariner;
+  $primary-dark: $azure;
+  $primary-clicked: $bay-of-many;
+
+$message-success: $eucalyptus;
+$message-error: $persian-red;
+$message-primary: $mariner;

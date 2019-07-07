@@ -1,0 +1,57 @@
+.input-full {
+  width: 100%;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  margin: 10pt 0;
+
+  .input-group-title {
+    position: absolute;
+    font-size: 1rem;
+    color: $mine-shaft;
+    top: 12.5pt;
+    left: 10pt;
+    @include transition(250ms);
+  }
+
+  .input-group-title-static {
+    position: absolute;
+    color: $mine-shaft;
+    font-size: 0.75rem;
+    top: 5pt;
+    left: 10pt;
+  }
+
+  &__input {
+    width: 100%;
+    color: transparent;
+    background-color: $white;
+    border: 1pt solid $mine-shaft;
+    padding: 16.5pt 10pt 10pt 10pt;
+    font-size: 1rem;
+
+    &:focus {
+      border-color: $primary;
+      color: $mine-shaft;
+      outline: 2pt solid $primary;
+    }
+  }
+
+  &__no-input {
+    background-color: $white;
+    border: 1pt solid $mine-shaft;
+    padding: 16.5pt 10pt 10pt 10pt;
+  }
+
+  .has-value {
+    font-size: 0.75rem;
+    top: 5pt;
+    @include transition(250ms);
+  }
+
+  .colored {
+    color: $mine-shaft;
+  }
+}

@@ -1,0 +1,122 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__sidepanel {
+    background-color: $white;
+    height: 100vh;
+    padding: 10pt;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 250pt;
+    z-index: 999;
+
+    &--balance {
+      position: relative;
+      width: 100%;
+      padding: 20pt 0;
+      border-bottom: 1pt solid $alto;
+      @include user-select(none);
+
+      & > .currency {
+        position: absolute;
+        height: 1rem;
+        width: 25pt;
+        font-size: 0.75rem;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        @include rotate(-90deg);
+      }
+
+      & > .amount {
+        padding: 0 0 0 20pt;
+        font-size: 1.5rem;
+        line-height: 12.5pt;
+      }
+    }
+
+    &--navigator {
+      list-style: none;
+      list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+      padding: 0;
+      margin: 15pt 0;
+
+      & > a:focus {
+        outline: none;
+      }
+
+      li {
+        width: 100%;
+        padding: 15pt 20pt;
+        float: left;
+
+        &:hover {
+          background-color: $alto;
+        }
+
+        & > i {
+          padding: 0 10pt 0 0;
+        }
+      }
+    }
+  }
+
+  &__content {
+    background-color: $alto;
+    padding: 20pt;
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
+
+    .container {
+      background-color: $white;
+      width: 100%;
+      padding: 20pt;
+
+      &__title {
+        padding: 0;
+        margin: 10pt 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      &__table {
+        width: 100%;
+        height: auto;
+        overflow-x: auto;
+
+        & > table {
+          width: 100%;
+          border-collapse: collapse;
+          border: 1pt solid $alto;
+
+          th {
+            background-color: $primary;
+            padding: 10pt;
+            font-weight: 500;
+            color: $white;
+          }
+
+          tr:nth-child(even) {
+            background-color: $alto;
+          }
+
+          td {
+            padding: 10pt;
+          }
+
+          .td-actions {
+            text-align: center;
+            color: $primary;
+
+            i {
+              padding: 0 2.5pt;
+            }
+          }
+        }
+      }
+    }
+  }
+}

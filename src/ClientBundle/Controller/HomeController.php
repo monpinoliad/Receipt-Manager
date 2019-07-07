@@ -6,8 +6,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class HomeController extends Controller
 {
-    public function indexAction()
+    public function dashboardAction()
     {
-        return $this->render('@Client/Pages/Home/index.html.twig');
+
+        $amount = $this
+            ->get('core.manager.receipt')
+            ->getAll();
+
+        $totalAmount = 0;
+        foreach($amount as $a) {
+            $totalAmount += (float)$a->getAmount();
+        }
+
+        return $this->render('@Client/Pages/Dashboard/index.html.twig',
+            [
+                'amount' => $totalAmount
+            ]
+        );
     }
 }

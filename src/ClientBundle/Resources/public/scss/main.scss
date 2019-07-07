@@ -13,7 +13,9 @@
   'components/footer',
   'components/inputs',
   'components/nav',
+  'components/messages',
   'components/sidebar';
 
 @import
-  'layouts/client';
+  'layouts/client',
+  'layouts/login';

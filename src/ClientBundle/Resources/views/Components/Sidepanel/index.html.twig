@@ -1,0 +1,27 @@
+<section class="wrapper__sidepanel">
+    <div class="wrapper__sidepanel--balance">
+        <div class="currency">
+            PHP
+        </div>
+        <div class="amount">
+            {{ amount|number_format(2, '.', ',') }}
+        </div>
+    </div>
+    <ul class="wrapper__sidepanel--navigator">
+        <a href="{{ path('client_dashboard') }}">
+            <li><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+        </a>
+        <a href="{{ path('client_receipt_insert') }}">
+            <li><i class="fas fa-receipt"></i> Insert Receipt</li>
+        </a>
+        <a href="{{ path('client_receipt_list') }}">
+            <li><i class="fas fa-file-invoice"></i> Receipts</li>
+        </a>
+        <a href="#">
+            <li><i class="fas fa-cog"></i> Settings</li>
+        </a>
+        <a href="{{ path('client_logout') }}">
+            <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+        </a>
+    </ul>
+</section>

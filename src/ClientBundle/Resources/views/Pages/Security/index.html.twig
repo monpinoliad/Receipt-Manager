@@ -1,0 +1,53 @@
+{% extends '@Client/Base/index.html.twig' %}
+
+{% block body %}
+    <div class="login-wrapper">
+        <section class="login-wrapper__sidepanel">
+            <h1 class="login-wrapper__sidepanel--title">
+                Receipt Manager
+            </h1>
+            <h2 class="login-wrapper__sidepanel--description">
+                Let's start managing your costs today!
+            </h2>
+            <form action="{{ path('client_login') }}" method="post" class="form-login">
+                {% if error %}
+                    <div class="message-error">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                {% endif %}
+                <label>
+                    <div class="input-group">
+                        <input
+                                class="input-group__input"
+                                type="text"
+                                name="_username"
+                                value="{{ last_username }}"
+                                required />
+                        <div class="input-group-title">
+                            Username
+                        </div>
+                    </div>
+                </label>
+                <label>
+                    <div class="input-group">
+                        <input
+                                type="password"
+                                class="input-group__input"
+                                name="_password"
+                                required />
+                        <div class="input-group-title">
+                            Password
+                        </div>
+                    </div>
+                </label>
+                <button class="btn">Login</button>
+            </form>
+            <div class="login-wrapper__sidepanel--copyright">
+                &copy; Copyright 2019
+            </div>
+        </section>
+        <section class="login-wrapper__content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ducimus excepturi iure maxime nulla odit pariatur, reprehenderit. Assumenda consequuntur magni necessitatibus nobis, non odit reiciendis temporibus. Amet ea labore quo.
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends '@Client/Base/index.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        {% include '@Client/Components/Sidepanel/index.html.twig' %}
+        <section class="wrapper__content">
+            <div class="container">
+                <h1 class="container__title">
+                    Receipts
+                </h1>
+                <div class="container__table">
+                    <table>
+                        <thead>
+                            <th>Slug ID</th>
+                            <th>Receipt Amount</th>
+                            <th>Date Issued</th>
+                            <th>Actions</th>
+                        </thead>
+                        <tbody>
+                            {% for receipt in receipts %}
+                            <tr>
+                                <td>{{ receipt.slugId }}</td>
+                                <td>PHP {{ receipt.amount|number_format(2, ".", ",") }}</td>
+                                <td>{{ receipt.dateIssued|date("M d, o") }}</td>
+                                <td class="td-actions">
+                                    <a href="{{ path('client_receipt_edit', {'slugId':receipt.slugId}) }}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    <a href="{{ path('client_receipt_delete', {'slugId':receipt.slugId}) }}">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+
+                                    <a href="{{ path('client_receipt_view', {'slugId':receipt.slugId}) }}">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -1,3 +1,35 @@
-client_homepage:
+client_login:
     path:     /
-    defaults: { _controller: ClientBundle:Home:index }
+    defaults: { _controller: ClientBundle:Security:login }
+
+client_logout:
+    path:     /logout
+    defaults: { _controller: ClientBundle:Security:logout }
+
+client_dashboard:
+    path:     /dashboard
+    defaults: { _controller: ClientBundle:Home:dashboard }
+
+client_receipt_list:
+  path:     /receipt/list
+  defaults: { _controller: ClientBundle:Receipt:list }
+
+client_receipt_insert:
+    path:     /receipt/insert
+    defaults: { _controller: ClientBundle:Receipt:insert }
+
+client_receipt_add:
+    path:     /receipt/add
+    defaults: { _controller: ClientBundle:Receipt:add }
+
+client_receipt_edit:
+    path:     /receipt/edit/{slugId}
+    defaults: { _controller: ClientBundle:Receipt:edit }
+
+client_receipt_view:
+    path:     /receipt/{slugId}
+    defaults: { _controller: ClientBundle:Receipt:view }
+
+client_receipt_delete:
+    path:     /receipt/delete/{slugId}
+    defaults: { _controller: ClientBundle:Receipt:delete }

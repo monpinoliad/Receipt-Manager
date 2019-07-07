@@ -10,12 +10,18 @@
         {% stylesheets filter="scssphp" output="css/client.css" "bundles/client/scss/main.scss"%}
             <link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     {% endblock stylesheets %}
 </head>
 <body>
     {% block body %}
     {% endblock body %}
     {% block javascripts %}
+        {% javascripts filter="?jsqueeze" output="js/main.js"
+            "bundles/client/js/main.js"
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
     {% endblock javascripts %}
 </body>
 </html>

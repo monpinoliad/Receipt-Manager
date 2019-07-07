@@ -1,0 +1,22 @@
+.btn {
+  background-color: $primary;
+  width: 100%;
+  color: $white;
+  font-size: 1rem;
+  border: none;
+  padding: 15pt;
+  margin: 0 0 5pt 0pt;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-dark;
+  }
+
+  &:focus {
+    background-color: $primary-clicked;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
